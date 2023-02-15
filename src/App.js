@@ -34,6 +34,10 @@ const PokemonTest = ({name, base}) =>(
       <tr key={key}>
         <td>{key}</td>
         <td>{base[key]}</td>
+        {/* test-branch2的內容 */}
+        <p>test-branch2的內容</p>
+        <td>{base[key]}</td>
+        <td>{base[key]}</td>
       </tr>
     ))}
   </table>
@@ -109,7 +113,7 @@ function App() {
         }}
       >
         <div>
-          <h1>test-branch的內容</h1>
+          <h1>test-branch2的內容</h1>
           <input value={filter} onChange={(event) => filterSet(event.target.value)}/>
           <table width="100%">
             <thead>
