@@ -25,6 +25,21 @@ PokemonRow.propTypes = {
   onSelect: PropTypes.func
 }
 
+//test-branch的內容
+const PokemonTest = ({name, base}) =>(
+  <div>
+  <h1>{name.english}</h1>
+  <table>
+    {Object.keys(base).map((key) =>(
+      <tr key={key}>
+        <td>{key}</td>
+        <td>{base[key]}</td>
+      </tr>
+    ))}
+  </table>
+</div>
+)
+
 const PokemonInfo = ({name, base}) =>(
   <div>
   <h1>{name.english}</h1>
@@ -50,6 +65,20 @@ PokemonInfo.protoTypes = {
     "Sp. Attack": PropTypes.number.isRequired,
     "Sp. Defense": PropTypes.number.isRequired,
     Speed: PropTypes.number.isRequired,
+  })
+}
+//test-branch的內容
+PokemonTest.protoTypes = {
+  name: PropTypes.shape({
+    english: PropTypes.string.isRequired,
+  }),
+  base: PropTypes.shape({
+    HP: PropTypes.number,
+    Attack: PropTypes.number,
+    Defense: PropTypes.number,
+    "Sp. Attack": PropTypes.number,
+    "Sp. Defense": PropTypes.number,
+    Speed: PropTypes.number,
   })
 }
 
@@ -80,6 +109,7 @@ function App() {
         }}
       >
         <div>
+          <h1>test-branch的內容</h1>
           <input value={filter} onChange={(event) => filterSet(event.target.value)}/>
           <table width="100%">
             <thead>
